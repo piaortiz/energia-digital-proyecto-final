@@ -2,7 +2,7 @@
 
 Proyecto final del programa **EnergIA Digital — Data Science** (Fundación YPF).
 
-**Integrantes:** Mariapia Ortiz, Antonella Fontanetto y Lucero Gauna · **Comisión:** 2
+**Integrantes:** Mariapia Ortiz y Antonella Fontanetto · **Comisión:** 2
 
 ## Dataset
 
