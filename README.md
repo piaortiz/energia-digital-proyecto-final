@@ -49,7 +49,15 @@ El detalle está en el notebook 01.
 
 ## Modelos
 
-- **Supervisado (pre-entrega 3):** pendiente.
+- **Supervisado (pre-entrega 3).** Predecimos la producción de un pozo-mes sólo con sus características
+  (cuenca, provincia, formación, tipo y subtipo de recurso, sistema de extracción, operadora, profundidad, días
+  efectivos y mes). Dejamos afuera el gas y el agua del mismo mes para no filtrar la respuesta. Lo planteamos de
+  dos formas: **regresión** sobre `log1p(prod_pet)` y **clasificación** en tres rangos de productividad (cortes
+  calculados sólo con entrenamiento). Comparamos un modelo de referencia, un modelo lineal, un árbol de decisión y
+  un Random Forest con validación cruzada por pozo (`GroupKFold`). El árbol y el Random Forest por defecto
+  sobreajustaban y validaban peor que el modelo lineal. Optimizamos el Random Forest con **Optuna** y en test
+  obtuvimos **R² 0,71** (la predicción típica se equivoca por un factor de 1,9) y **F1 macro 0,61 con AUC 0,80**.
+  Los días efectivos y la profundidad son las variables más usadas. El detalle está en el notebook 02.
 - **No supervisado (pre-entrega 4):** pendiente.
 
 ## Estructura
@@ -60,7 +68,8 @@ El detalle está en el notebook 01.
 │   └── processed/
 │       └── pozos_petroleros_2025.csv.gz      # salida del notebook 01
 ├── notebooks/
-│   └── 01_analisis_exploratorio.ipynb        # pre-entrega 2
+│   ├── 01_analisis_exploratorio.ipynb        # pre-entrega 2
+│   └── 02_modelo_supervisado.ipynb           # pre-entrega 3
 ├── requirements.txt
 └── README.md
 ```
@@ -72,6 +81,7 @@ El detalle está en el notebook 01.
 ```python
 !git clone <url-del-repositorio>
 %cd energia-digital-proyecto-final/notebooks
+!pip install optuna  # sólo para el notebook 02
 ```
 
 **Anaconda o Python local:**
@@ -84,4 +94,4 @@ jupyter notebook notebooks/01_analisis_exploratorio.ipynb
 ```
 
 Los notebooks leen los datos con rutas relativas (`../data/...`), así que deben ejecutarse desde la carpeta
-`notebooks/`.
+`notebooks/`. El notebook 02 tarda unos 8 minutos completo, la mayor parte en las dos búsquedas con Optuna.
