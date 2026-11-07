@@ -52,12 +52,15 @@ El detalle está en el notebook 01.
 - **Supervisado (pre-entrega 3).** Predecimos la producción de un pozo-mes sólo con sus características
   (cuenca, provincia, formación, tipo y subtipo de recurso, sistema de extracción, operadora, profundidad, días
   efectivos y mes). Dejamos afuera el gas y el agua del mismo mes para no filtrar la respuesta. Lo planteamos de
-  dos formas: **regresión** sobre `log1p(prod_pet)` y **clasificación** en tres rangos de productividad (cortes
-  calculados sólo con entrenamiento). Comparamos un modelo de referencia, un modelo lineal, un árbol de decisión y
-  un Random Forest con validación cruzada por pozo (`GroupKFold`). El árbol y el Random Forest por defecto
-  sobreajustaban y validaban peor que el modelo lineal. Optimizamos el Random Forest con **Optuna** y en test
-  obtuvimos **R² 0,71** (la predicción típica se equivoca por un factor de 1,9) y **F1 macro 0,61 con AUC 0,80**.
-  Los días efectivos y la profundidad son las variables más usadas. El detalle está en el notebook 02.
+  dos formas: **regresión** sobre `log1p(prod_pet)` y **clasificación** en tres rangos de productividad (terciles
+  calculados sólo con entrenamiento, así que las clases quedan balanceadas por construcción). Comparamos un modelo
+  de referencia, un modelo lineal, un árbol de decisión y un Random Forest con validación cruzada por pozo
+  (`GroupKFold`). El árbol y el Random Forest por defecto sobreajustaban y validaban peor que el modelo lineal.
+  Optimizamos el Random Forest con **Optuna** y en test obtuvimos **R² 0,71** (la predicción típica se equivoca por
+  un factor de 1,9) y **F1 macro 0,61 con AUC 0,80**; la regresión logística, también en test, queda en F1 macro
+  0,60. Los días efectivos y la profundidad son las variables más usadas. Como los días efectivos son del mismo
+  mes que la producción, medimos el modelo sin ellos: el R² en validación baja de 0,68 a 0,50 y el F1 macro de
+  0,60 a 0,57. El detalle está en el notebook 02.
 - **No supervisado (pre-entrega 4):** pendiente.
 
 ## Estructura
