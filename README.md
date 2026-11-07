@@ -61,7 +61,14 @@ El detalle está en el notebook 01.
   0,60. Los días efectivos y la profundidad son las variables más usadas. Como los días efectivos son del mismo
   mes que la producción, medimos el modelo sin ellos: el R² en validación baja de 0,68 a 0,50 y el F1 macro de
   0,60 a 0,57. El detalle está en el notebook 02.
-- **No supervisado (pre-entrega 4):** pendiente.
+- **No supervisado (pre-entrega 4).** Agrupamos los pozos según su perfil productivo de 2025 (petróleo y gas por
+  día efectivo, corte de agua y profundidad; con logaritmo en los caudales y `StandardScaler`). Con **K-Means**
+  elegimos k = 3 por el método del codo, aunque el silhouette es máximo con k = 2 (0,68 contra 0,47), porque el
+  tercer grupo tiene lectura operativa. Así quedan tres perfiles: convencional maduro con mucha agua, convencional
+  de bajo caudal con poca agua y no convencional de alto caudal (el 8 % de los pozos, que da el 62 % del
+  petróleo). **DBSCAN**, con `eps` elegido por el gráfico de distancia al vecino n.º 20, encuentra sólo la
+  separación entre convencional y no convencional y marca como ruido un 3,4 % de pozos atípicos. Los grupos
+  coinciden con el tipo de recurso y la cuenca, que el modelo no vio. El detalle está en el notebook 03.
 
 ## Estructura
 
@@ -72,7 +79,8 @@ El detalle está en el notebook 01.
 │       └── pozos_petroleros_2025.csv.gz      # salida del notebook 01
 ├── notebooks/
 │   ├── 01_analisis_exploratorio.ipynb        # pre-entrega 2
-│   └── 02_modelo_supervisado.ipynb           # pre-entrega 3
+│   ├── 02_modelo_supervisado.ipynb           # pre-entrega 3
+│   └── 03_clustering.ipynb                   # pre-entrega 4
 ├── requirements.txt
 └── README.md
 ```
@@ -97,4 +105,5 @@ jupyter notebook notebooks/01_analisis_exploratorio.ipynb
 ```
 
 Los notebooks leen los datos con rutas relativas (`../data/...`), así que deben ejecutarse desde la carpeta
-`notebooks/`. El notebook 02 tarda unos 8 minutos completo, la mayor parte en las dos búsquedas con Optuna.
+`notebooks/`. El notebook 02 tarda unos 8 minutos completo, la mayor parte en las dos búsquedas con Optuna; el 03, menos de
+un minuto.
