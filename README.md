@@ -79,7 +79,8 @@ crecimiento viene de **más pozos** (de 1.661 a 2.008 en producción) y no de po
 rindió unos 25 m³ por día efectivo todo el año. **YPF** produce el 49 % del petróleo del país y opera el 59 % del de
 Vaca Muerta, de donde ya sale el 75 % de su petróleo. Su producción convencional cayó a la mitad, pero no por
 declinación: siguiendo cada pozo, 5.636 de sus 9.735 pozos convencionales pasaron a otras operadoras durante 2025
-(4.324 en diciembre, en Santa Cruz), en línea con el Plan Andes. Sólo se analizan pozos petroleros: el gas de Vaca
+(4.324 en diciembre, en Santa Cruz), en línea con el Plan Andes. Además medimos los **días no producidos** (una aproximación al *deferment*): los pozos de Vaca Muerta
+pasan sin producir el 9,5 % de los días, contra el 10,9 % del resto del país. Sólo se analizan pozos petroleros: el gas de Vaca
 Muerta queda afuera. El detalle está en el notebook 04.
 
 ## Estructura
