@@ -70,6 +70,18 @@ El detalle está en el notebook 01.
   separación entre convencional y no convencional y marca como ruido un 3,4 % de pozos atípicos. Los grupos
   coinciden con el tipo de recurso y la cuenca, que el modelo no vio. El detalle está en el notebook 03.
 
+## Foco Neuquén: Vaca Muerta e YPF
+
+Somos de Neuquén y hacemos el curso en la Fundación YPF, así que miramos de cerca lo que más pesó en todo el
+proyecto. **Vaca Muerta** (formación `VMUT`) tiene el 8,8 % de los pozos petroleros pero dio el **62 % del petróleo
+de 2025**; en el año creció un 35 % mientras el resto del país cayó un 9 %, y pasó del 58 % al 67 % del total. El
+crecimiento viene de **más pozos** (de 1.661 a 2.008 en producción) y no de pozos más productivos: el pozo típico
+rindió unos 25 m³ por día efectivo todo el año. **YPF** produce el 49 % del petróleo del país y opera el 59 % del de
+Vaca Muerta, de donde ya sale el 75 % de su petróleo. Su producción convencional cayó a la mitad, pero no por
+declinación: siguiendo cada pozo, 5.636 de sus 9.735 pozos convencionales pasaron a otras operadoras durante 2025
+(4.324 en diciembre, en Santa Cruz), en línea con el Plan Andes. Sólo se analizan pozos petroleros: el gas de Vaca
+Muerta queda afuera. El detalle está en el notebook 04.
+
 ## Estructura
 
 ```text
@@ -80,7 +92,8 @@ El detalle está en el notebook 01.
 ├── notebooks/
 │   ├── 01_analisis_exploratorio.ipynb        # pre-entrega 2
 │   ├── 02_modelo_supervisado.ipynb           # pre-entrega 3
-│   └── 03_clustering.ipynb                   # pre-entrega 4
+│   ├── 03_clustering.ipynb                   # pre-entrega 4
+│   └── 04_vaca_muerta_ypf.ipynb              # foco Neuquén: Vaca Muerta e YPF
 ├── requirements.txt
 └── README.md
 ```
